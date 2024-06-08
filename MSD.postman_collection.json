@@ -1,0 +1,410 @@
+{
+	"info": {
+		"_postman_id": "44e355ac-24c4-40b9-8830-43ebe244db01",
+		"name": "MSD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "updateCart",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"cartId\":\"644a4cced247cf004e2452fb\",\n        \"lineItems\": [{\n            \"productId\":   \"1003\",\"productName\":  \"testProduct\",\"quantity\":  \"2\", \"price\": \"100\"\n            }]\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/api/cart/644a4cced247cf004e2452fb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"cart",
+								"644a4cced247cf004e2452fb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addCart",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"lineItems\":\n    [\n        {\"productId\":   \"1001\",\"productName\":  \"Samsung Galaxy\",\"quantity\":  \"1\",\"price\":\"100\"},\n        {\"productId\":   \"1002\",\"productName\":  \"LG Refrigerator\", \"quantity\":  \"1\",\"price\":\"100\"}\n        ]\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/api/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"cart"
+							]
+						},
+						"description": "Add Cart with one or more LineItems"
+					},
+					"response": []
+				},
+				{
+					"name": "cartList",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/api/cart/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"cart",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "emptyCart",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/api/cart/644a4c1cd247cf004e2452f5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"cart",
+								"644a4c1cd247cf004e2452f5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchCart",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/api/cart/644a4cced247cf004e2452fb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"cart",
+								"644a4cced247cf004e2452fb"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "addCustomer",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerName\":\"Dummy\",\n    \"customerEmail\":\"Dummy@dummy.com\",\n    \"customerBillingAddress\":{\n        \"doorNo\":\"11\",\n        \"streetName\":\"demo\",\n        \"layout\":\"asdfgh\",\n        \"city\":\"dfghj\",\n        \"pincode\":\"12345678\"\n    },\n    \"customerShippingAddress\":{\n        \"doorNo\":\"11\",\n        \"streetName\":\"demo\",\n        \"layout\":\"asdfgh\",\n        \"city\":\"dfghj\",\n        \"pincode\":\"12345678\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/customer/addCustomer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"customer",
+								"addCustomer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Shopping",
+			"item": [
+				{
+					"name": "addCustomer",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerName\":\"DummyFromShopping11\",\n    \"customerEmail\":\"Dummy11@dummy.com\",\n    \"customerBillingAddress\":{\n        \"doorNo\":\"11\",\n        \"streetName\":\"demo\",\n        \"layout\":\"asdfgh\",\n        \"city\":\"dfghj\",\n        \"pincode\":\"12345678\"\n    },\n    \"customerShippingAddress\":{\n        \"doorNo\":\"11\",\n        \"streetName\":\"demo\",\n        \"layout\":\"asdfgh\",\n        \"city\":\"dfghj\",\n        \"pincode\":\"12345678\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/shoppingservice/customer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"shoppingservice",
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addProducts",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productName\":\"dummyProduct1\",\n    \"productDescription\":\"asdfghjk\",\n    \"productPrice\":100,\n    \"quantity\":2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/shoppingservice/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"shoppingservice",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCart",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"lineItems\": [{\n            \"productId\": 1,\"productName\":  \"dummyProduct\",\"quantity\":  2, \"price\": \"100\"\n            },{\n            \"productId\": 2,\"productName\":  \"dummyProduct1\",\"quantity\":  1, \"price\": \"100\"\n            }]\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/shoppingservice/customer/6450dfe98c53b277154c4951/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"shoppingservice",
+								"customer",
+								"6450dfe98c53b277154c4951",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addOrder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/api/shoppingservice/customer/644bb456f613f30d717364ba/order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"shoppingservice",
+								"customer",
+								"644bb456f613f30d717364ba",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/api/shoppingservice/customer/6450dfe98c53b277154c4951/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"shoppingservice",
+								"customer",
+								"6450dfe98c53b277154c4951",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "addOrder",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"lineItems\":\n    [\n        {\"productId\":   \"1001\",\"productName\":  \"Samsung Galaxy\",\"quantity\":  \"2\",\"price\":\"100\"},\n        {\"productId\":   \"1002\",\"productName\":  \"LG Refrigerator\", \"quantity\":  \"2\",\"price\":\"100\"}\n        ]\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/api/order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"order"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
+
